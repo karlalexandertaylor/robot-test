@@ -39,7 +39,7 @@ def check_arguments():
     # Validate the file argument is a file
     result = os.path.isfile(sys.argv[1])
     if result == False:
-        print ('Invalid File')
+        print('Invalid File')
         exit()
 
     # Check the debug setting
@@ -54,9 +54,11 @@ def check_arguments():
     else:
         argument_exit()
 
+# Function to print command line usage
+
 
 def argument_exit():
-    print ('Invalid argument For debug - usage is -> python omingen_prog1.py filename debug -> where filename is the input file and debug is either 1 for on or 0 for off')
+    print('Invalid argument For debug - usage is -> python omingen_prog1.py filename debug -> where filename is the input file and debug is either 1 for on or 0 for off')
     exit()
 
 # Function to evaluate file line
@@ -70,7 +72,7 @@ def evaluate_line():
     elif (line_value == 'R' or line_value == 'L'):
         facing_function(line_value)
     else:
-        print ('Invalid line character - ignoring')
+        print('Invalid line character - ignoring')
 
 # Function to handle movement
 
@@ -137,24 +139,24 @@ def calculate_distance_from_centre():
 def debug_function(debug_command):
     # Debug function to share values to help identify issues
     if (debug_command == 'coords'):
-        print ('*****DEBUG OUTPUT -  final position *****')
-        print ('Horizontal coordinate = ' + str(X))
-        print ('Vertical coordinate = ' + str(Y))
-        print ('*****')
+        print('*****DEBUG OUTPUT -  final position *****')
+        print('Horizontal coordinate = ' + str(X))
+        print('Vertical coordinate = ' + str(Y))
+        print('*****')
     elif (debug_command == 'evaluate_file_line'):
-        print ('*****DEBUG OUTPUT -  evaluate line *****')
-        print ('File line = ' + line_value)
-        print ('Current direction faced = ' + facing)
-        print ('*****')
+        print('*****DEBUG OUTPUT -  evaluate line *****')
+        print('File line = ' + line_value)
+        print('Current direction faced = ' + facing)
+        print('*****')
     elif (debug_command == 'facing_function'):
-        print ('*****DEBUG OUTPUT - facing function *****')
-        print ('Direction of turn = ' + line_value)
-        print ('New location faced = ' + facing)
-        print ('*****')
+        print('*****DEBUG OUTPUT - facing function *****')
+        print('Direction of turn = ' + line_value)
+        print('New location faced = ' + facing)
+        print('*****')
     else:
-        print ('*****')
-        print ('Unknown error')
-        print ('*****')
+        print('*****')
+        print('Unknown error')
+        print('*****')
 
 # Main code function
 # Line file read loop
@@ -187,7 +189,7 @@ handle_negative_coord()
 calculate_distance_from_centre()
 
 # Print output
-print ('Final position is ' + str(X) +
-       ' horizontal and ' + str(Y) + ' vertical')
-print ('Your distance from the start point is ' + str(distance))
-print ('You have moved ' + str(F) + ' spaces')
+print('Final position is ' + str(X) +
+      ' horizontal and ' + str(Y) + ' vertical')
+print('Your distance from the start point is ' + str(distance))
+print('You have moved ' + str(F) + ' spaces')
