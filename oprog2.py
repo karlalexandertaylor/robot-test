@@ -1,8 +1,17 @@
 #####################################
-# Version 1.1 of Distance Calculator
+# Version 1.1 of circle calculator
 #
-# Purpose = Work out distance travelled from initial start point.  Distance is calculated based on how the crow flies between the two points
-# The programme also outputs the number actual forward movements
+# Purpose = Determine if the directions moved by the robot are a circle (please not in this example a circle is a square
+#
+# Assumption = that file input if circle will stop when it reaches the start point
+#
+# Author = Karl Taylor
+#
+# Change Log:
+#    - changesv1.0 = new comments at top of code file, add code comments, changed text messages for usage of program and output
+#
+# Suggested future changes
+#    - handle when movements are multiple circles
 #
 #####################################
 
@@ -45,7 +54,7 @@ def check_arguments():
     # Validate the file argument is a file
     result = os.path.isfile(sys.argv[1])
     if result == False:
-        print ('Invalid File')
+        print('Invalid File')
         exit()
 
     # Check the debug setting
@@ -60,12 +69,14 @@ def check_arguments():
     else:
         argument_exit()
 
+# Function to print command line usage
+
 
 def argument_exit():
-    print ('Invalid argument For debug - usage is -> python omingen_prog1.py filename debug -> where filename is the input file and debug is either 1 for on or 0 for off')
+    print('Invalid argument For debug - usage is -> python omingen_prog1.py filename debug -> where filename is the input file and debug is either 1 for on or 0 for off')
     exit()
 
-# Function to evaluate file line
+# Function to evaluate file line and take action
 
 
 def evaluate_line():
@@ -76,7 +87,7 @@ def evaluate_line():
     elif (line_value == 'R' or line_value == 'L'):
         facing_function(line_value)
     else:
-        print ('Invalid line character - ignoring')
+        print('Invalid line character - ignoring')
 
 # Function to handle movement
 
@@ -156,35 +167,34 @@ def facing_function(direction):
 def debug_function(debug_command):
     # Debug function to share values to help identify issues
     if (debug_command == 'coords'):
-        print ('*****DEBUG OUTPUT -  final position *****')
-        print ('Horizontal coordinate = ' + str(X))
-        print ('Vertical coordinate = ' + str(Y))
-        print ('*****')
+        print('*****DEBUG OUTPUT -  final position *****')
+        print('Horizontal coordinate = ' + str(X))
+        print('Vertical coordinate = ' + str(Y))
+        print('*****')
     elif (debug_command == 'evaluate_file_line'):
-        print ('*****DEBUG OUTPUT -  evaluate line *****')
-        print ('File line = ' + line_value)
-        print ('Current direction faced = ' + facing)
-        print ('*****')
+        print('*****DEBUG OUTPUT -  evaluate line *****')
+        print('File line = ' + line_value)
+        print('Current direction faced = ' + facing)
+        print('*****')
     elif (debug_command == 'facing_function'):
-        print ('*****DEBUG OUTPUT - facing function *****')
-        print ('Direction of turn = ' + line_value)
-        print ('New location faced = ' + facing)
-        print ('*****')
+        print('*****DEBUG OUTPUT - facing function *****')
+        print('Direction of turn = ' + line_value)
+        print('New location faced = ' + facing)
+        print('*****')
     elif (debug_command == 'square_sides'):
-        print (size_side_1)
-        print (size_side_2)
-        print (size_side_3)
-        print (size_side_4)
-        print ('X=' + str(X) + 'Y=' + str(Y) + 'facing=' +
-               facing + 'lastfacing=' + store_last_facing)
-        print (current_side)
+        print(size_side_1)
+        print(size_side_2)
+        print(size_side_3)
+        print(size_side_4)
+        print('X=' + str(X) + 'Y=' + str(Y) + 'facing=' +
+              facing + 'lastfacing=' + store_last_facing)
+        print(current_side)
     else:
-        print ('*****')
-        print ('Unknown error')
-        print ('*****')
+        print('*****')
+        print('Unknown error')
+        print('*****')
 
 # Main code function
-# Line file read loop
 
 
 check_arguments()
@@ -192,7 +202,7 @@ check_arguments()
 # Get file name to evaluate - note argument 0 is the python code file and argument 1 is the file to be analysed
 filepath = sys.argv[1]
 
-# Calculate if final position is the same as the start position
+# Evaluate the file instructions
 with open(filepath) as fp:
     line = fp.readline()
     line_value = line.strip()
@@ -211,10 +221,10 @@ if (DEBUG == 1):
     debug_function('coords')
 
 if (X != 0 and Y != 0):
-    print ('Does not return to start position')
+    print('Not a circle')
     exit()
 
 if (size_side_1 == size_side_2 == size_side_3 == size_side_4):
-    print ('It is a circle')
+    print('It is a circle')
 else:
-    print ('Not a circle')
+    print('Not a circle')
