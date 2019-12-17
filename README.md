@@ -26,6 +26,8 @@ This application has two code files:
     - oprog1.py (calculates distance robot travelled)
     - oprog2.py (calculates if robot went in a circle)
     
+    NOTE - There is also a third file oprog3.py which is the code for a lambda variant picking up a file from S3
+    
 The structure to run the run the program is:
 
     python oprog1.py ./tests/test1.dir
