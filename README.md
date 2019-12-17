@@ -1,20 +1,14 @@
-============
-============
-Robot-Test
-============
-============
+
+# Robot-Test
+
 
 The purpose of this application is to build a small robot application which calculates the distance from the start point and whether the robot has moved in a circle.
 
-============
-Getting Started
-============
+# Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-=============
-Prerequisites
-=============
+# Prerequisites
 
 The applications are written in python.
 
@@ -25,9 +19,7 @@ A copy of python should be sufficient to run the application.  However other sup
     - Autopep8 for formatting
     - Sphinx for documentation
 
-===========
-Application
-===========
+# Application
 
 This application has two code files:
 
@@ -50,9 +42,7 @@ or
 
     python oprog2.py ./tests/test1.dir 1
 
-========================
-Structure of input files
-========================
+# Structure of input files
 
 The program looks for one of three values on a single line 
 
@@ -69,28 +59,20 @@ F
 
 The program will ignore the line if it does not comply with the rules above
 
-==========
-Test Files
-==========
+# Test Files
 
 There are a number of test files to use with the programs and these exist in the tests directory
 
-=================
-Structure of Code
-=================
+# Structure of Code
 
 .. image:: https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/karlalexandertaylor/d2b83950471a8ca20375eccaf8399976/raw/oprog1
 
-=======
-Authors
-=======
+# Authors
 
 Karl Taylor
 See also the list of contributors who participated in this project.
 
-=======
-License
-=======
+# License
 
 This project is licensed under the GNU License - see the LICENSE.md file for details
 
